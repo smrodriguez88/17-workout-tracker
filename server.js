@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3000;
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/workoutDB',
+    process.env.MONGODB_URI || 'mongodb://localhost/workout_db',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
+      useCreateIndex: false
     })
 
 app.use(express.urlencoded({ extended: true }));
